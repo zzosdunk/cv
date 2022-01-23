@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\zzosd\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\zzosd\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_CV.475680560.00" t="ExcludeRecursive" />
+    <e p="C:\Users\zzosd\Documents\UnityProjects\CV" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="BOXOPHOBIC" t="Include">
+          <e p="Skybox Cubemap Extended" t="Include">
+            <e p="Core" t="Include">
+              <e p="Editor" t="Include">
+                <e p="Boxophobic.SkyboxCubemapExtended.Editor.asmdef" t="Include" />
+                <e p="SkyboxExtendedHub.cs" t="Include" />
+                <e p="SkyboxExtendedShaderGUI.cs" t="Include" />
+                <e p="SkyboxExtendedWindows.cs" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="Skybox Cubemap Extended.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Utils" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Boxophobic.Utils.Editor.asmdef" t="Include" />
+              <e p="Constants" t="Include">
+                <e p="Constants.cs" t="Include" />
+              </e>
+              <e p="SettingsUtils" t="Include">
+                <e p="LoadSettingsData.cs" t="Include" />
+                <e p="SaveSettingsData.cs" t="Include" />
+              </e>
+              <e p="StyledGUI" t="Include">
+                <e p="DrawInspectorBanner.cs" t="Include" />
+                <e p="DrawInspectorCategory.cs" t="Include" />
+                <e p="DrawWindowBanner.cs" t="Include" />
+                <e p="DrawWindowCategory.cs" t="Include" />
+              </e>
+              <e p="StyledInspector" t="Include">
+                <e p="StyledBannerDrawer.cs" t="Include" />
+                <e p="StyledButtonDrawer.cs" t="Include" />
+                <e p="StyledCategoryDrawer.cs" t="Include" />
+                <e p="StyledIndentDrawer.cs" t="Include" />
+                <e p="StyledInteractiveDrawer.cs" t="Include" />
+                <e p="StyledMessageDrawer.cs" t="Include" />
+                <e p="StyledPopupArrayDrawer.cs" t="Include" />
+                <e p="StyledPopupLayersDrawer.cs" t="Include" />
+                <e p="StyledRangeOptionsDrawer.cs" t="Include" />
+                <e p="StyledSpaceDrawer.cs" t="Include" />
+                <e p="StyledTextDrawer.cs" t="Include" />
+                <e p="StyledTexturePreviewDrawer.cs" t="Include" />
+              </e>
+              <e p="StyledMaterial" t="Include">
+                <e p="StyledBannerDrawer.cs" t="Include" />
+                <e p="StyledButtonDrawer.cs" t="Include" />
+                <e p="StyledCategoryDrawer.cs" t="Include" />
+                <e p="StyledDiffusionMaterialDrawer.cs" t="Include" />
+                <e p="StyledIndentDrawer.cs" t="Include" />
+                <e p="StyledInteractiveDrawer.cs" t="Include" />
+                <e p="StyledMessageDrawer.cs" t="Include" />
+                <e p="StyledOptionsSliderDrawer.cs" t="Include" />
+                <e p="StyledRemapSliderDrawer.cs" t="Include" />
+                <e p="StyledSpaceDrawer.cs" t="Include" />
+                <e p="StyledTextDrawer.cs" t="Include" />
+                <e p="StyledTextureDrawer.cs" t="Include" />
+                <e p="StyledToggleDrawer.cs" t="Include" />
+              </e>
+              <e p="StyledMono" t="Include">
+                <e p="StyledMonoBehaviourEditor.cs" t="Include" />
+                <e p="StyledScriptableObjectEditor.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Boxophobic.Utils.Scripts.asmdef" t="Include" />
+              <e p="SettingsUtils" t="Include">
+                <e p="SettingsData.cs" t="Include" />
+              </e>
+              <e p="StyledInspector" t="Include">
+                <e p="StyledBanner.cs" t="Include" />
+                <e p="StyledButton.cs" t="Include" />
+                <e p="StyledCategory.cs" t="Include" />
+                <e p="StyledIndent.cs" t="Include" />
+                <e p="StyledInteractive.cs" t="Include" />
+                <e p="StyledMessage.cs" t="Include" />
+                <e p="StyledPopupArray.cs" t="Include" />
+                <e p="StyledPopupLayers.cs" t="Include" />
+                <e p="StyledRangeOptions.cs" t="Include" />
+                <e p="StyledSpace.cs" t="Include" />
+                <e p="StyledText.cs" t="Include" />
+                <e p="StyledTexturePreview.cs" t="Include" />
+              </e>
+              <e p="StyledMono" t="Include">
+                <e p="StyledMonoBehaviour.cs" t="Include" />
+                <e p="StyledScriptableObject.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="GUI PRO Kit - Fantasy RPG" t="Include">
+          <e p="Extensions" t="Include">
+            <e p="UIParticle" t="Include">
+              <e p="hidden particle.shader" t="Include" />
+              <e p="UIAdditive.shader" t="Include" />
+              <e p="UIParticleSystem.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="PanelControlFantasyRPG.cs" t="Include" />
+            <e p="PanelFantasyRPG.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Horizon Based Ambient Occlusion" t="Include">
+          <e p="Demo" t="Include">
+            <e p="Runtime" t="Include">
+              <e p="HBAO.Demo.Runtime.asmdef" t="Include" />
+              <e p="HBAOControl.cs" t="Include" />
+              <e p="RotateObject.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="HBAO.Editor.asmdef" t="Include" />
+            <e p="HBAOEditor.cs" t="Include" />
+            <e p="HBAOGaiaExtension.cs" t="Include" />
+          </e>
+          <e p="Readme.txt" t="Include" />
+          <e p="Runtime" t="Include">
+            <e p="HBAO.cs" t="Include" />
+            <e p="HBAO.Runtime.asmdef" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="HBAO.shader" t="Include" />
+            <e p="HBAO_AO.cginc" t="Include" />
+            <e p="HBAO_Blur.cginc" t="Include" />
+            <e p="HBAO_Common.cginc" t="Include" />
+            <e p="HBAO_Composite.cginc" t="Include" />
+            <e p="HBAO_Deinterleaving.cginc" t="Include" />
+            <e p="HBAO_TemporalFilter.cginc" t="Include" />
+          </e>
+          <e p="SRP" t="Include">
+            <e p="Readme.txt" t="Include" />
+            <e p="URP" t="Include">
+              <e p="Demo" t="Include">
+                <e p="Runtime" t="Include">
+                  <e p="HBAO.Demo.Universal.Runtime.asmdef" t="Include" />
+                  <e p="HBAOControl.cs" t="Include" />
+                  <e p="RotateObject.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Editor" t="Include">
+                <e p="HBAO.Universal.Editor.asmdef" t="Include" />
+                <e p="HBAOEditor.cs" t="Include" />
+              </e>
+              <e p="Runtime" t="Include">
+                <e p="HBAO.cs" t="Include" />
+                <e p="HBAO.Universal.Runtime.asmdef" t="Include" />
+                <e p="HBAORendererFeature.cs" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="HBAO.shader" t="Include" />
+                <e p="HBAO_AO.hlsl" t="Include" />
+                <e p="HBAO_Blur.hlsl" t="Include" />
+                <e p="HBAO_Common.hlsl" t="Include" />
+                <e p="HBAO_Composite.hlsl" t="Include" />
+                <e p="HBAO_Deinterleaving.hlsl" t="Include" />
+                <e p="HBAO_TemporalFilter.hlsl" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="OverCloud" t="Include">
+          <e p="Atmosphere" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="CBRead.cs" t="Include" />
+              <e p="CBWrite.cs" t="Include" />
+              <e p="Constants.cs" t="Include" />
+              <e p="Demo.cs" t="Include" />
+              <e p="DensityProfileLayer.cs" t="Include" />
+              <e p="Model.cs" t="Include" />
+              <e p="RotateCamera.cs" t="Include" />
+              <e p="RotateLight.cs" t="Include" />
+              <e p="TextureBuffer.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Definitions.cginc" t="Include" />
+              <e p="IrradianceFunctions.cginc" t="Include" />
+              <e p="Precomputation.compute" t="Include" />
+              <e p="Read.compute" t="Include" />
+              <e p="RenderingFunctions.cginc" t="Include" />
+              <e p="RenderSky.shader" t="Include" />
+              <e p="ScatteringFunctions.cginc" t="Include" />
+              <e p="TransmittanceFunctions.cginc" t="Include" />
+              <e p="UtilityFunctions.cginc" t="Include" />
+              <e p="Write.compute" t="Include" />
+            </e>
+          </e>
+          <e p="CloudNoiseGen" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="CloudNoiseGen.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="CloudNoiseGen.shader" t="Include" />
+              <e p="CloudNoiseLib.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="OverCloudCameraEditor.cs" t="Include" />
+            <e p="OverCloudEditor.cs" t="Include" />
+            <e p="OverCloudReflectionProbeEditor.cs" t="Include" />
+          </e>
+          <e p="Example Content" t="Include">
+            <e p="MouseFlight" t="Include">
+              <e p="Demo" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="Hud.cs" t="Include" />
+                  <e p="Plane.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="MouseFlightController.cs" t="Include" />
+              </e>
+            </e>
+            <e p="ScreenDroplets" t="Include">
+              <e p="Resources" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="ScreenDroplets.shader" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="ScreenDroplets.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="Airplane.cs" t="Include" />
+              <e p="Demo.cs" t="Include" />
+              <e p="Origin.cs" t="Include" />
+              <e p="Rain.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Lightning.shader" t="Include" />
+              <e p="Rain.shader" t="Include" />
+              <e p="SimpleAdditive.shader" t="Include" />
+            </e>
+            <e p="Tonemap" t="Include">
+              <e p="Resources" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="Tonemap.shader" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="Tonemap.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="OverCloudInclude.cginc" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="Atmosphere.cginc" t="Include" />
+              <e p="Atmosphere.shader" t="Include" />
+              <e p="BicubicLib.cginc" t="Include" />
+              <e p="Clear.shader" t="Include" />
+              <e p="Compositor.shader" t="Include" />
+              <e p="DepthUpsampling.shader" t="Include" />
+              <e p="DownsampleDepth.shader" t="Include" />
+              <e p="FogLight.cginc" t="Include" />
+              <e p="FogLight.shader" t="Include" />
+              <e p="Internal-DeferredShading.shader" t="Include" />
+              <e p="OverCloudCore.cginc" t="Include" />
+              <e p="OverCloudMain.cginc" t="Include" />
+              <e p="OverCloudMain.shader" t="Include" />
+              <e p="RippleNormals.shader" t="Include" />
+              <e p="ScatteringMask.shader" t="Include" />
+              <e p="SeparableBlur.cginc" t="Include" />
+              <e p="SeparableBlur.shader" t="Include" />
+              <e p="Skybox.cginc" t="Include" />
+              <e p="Skybox.shader" t="Include" />
+              <e p="Utilities.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="AtmosphereModel.cs" t="Include" />
+            <e p="Lightning.cs" t="Include" />
+            <e p="OverCloud.cs" t="Include" />
+            <e p="OverCloudCamera.cs" t="Include" />
+            <e p="OverCloudFogLight.cs" t="Include" />
+            <e p="OverCloudLight.cs" t="Include" />
+            <e p="OverCloudProbe.cs" t="Include" />
+            <e p="OverCloudReflectionProbe.cs" t="Include" />
+            <e p="OverCloudReflectionProbeUpdater.cs" t="Include" />
+          </e>
+          <e p="Textures" t="Include">
+            <e p="Starmap Credit.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Demigiant" t="Include">
+            <e p="DOTween" t="Include">
+              <e p="Modules" t="Include">
+                <e p="DOTweenModuleAudio.cs" t="Include" />
+                <e p="DOTweenModuleEPOOutline.cs" t="Include" />
+                <e p="DOTweenModulePhysics.cs" t="Include" />
+                <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                <e p="DOTweenModuleSprite.cs" t="Include" />
+                <e p="DOTweenModuleUI.cs" t="Include" />
+                <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                <e p="DOTweenModuleUtils.cs" t="Include" />
+              </e>
+              <e p="Readme.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Core" t="Include">
+            <e p="CameraManager.cs" t="Include" />
+            <e p="EventManager.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+            <e p="Interactions" t="Include">
+              <e p="Interactable.cs" t="Include" />
+              <e p="Location.cs" t="Include" />
+              <e p="PlayerInteraction.cs" t="Include" />
+            </e>
+            <e p="Locations" t="Include">
+              <e p="CountryLocation.cs" t="Include" />
+            </e>
+            <e p="UI" t="Include">
+              <e p="DynamicUIBehaviour.cs" t="Include" />
+              <e p="StaticUIBehaviour.cs" t="Include" />
+            </e>
+            <e p="UIManager.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
+            <e p="AnimStatesControl.cs" t="Include" />
+            <e p="TopDownPlayerController.cs" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+        <e p="tripolygon" t="Include">
+          <e p="UModeler" t="Include">
+            <e p="Materials" t="Include">
+              <e p="Basic" t="Include">
+                <e p="UModeler_UnlitVertexColorShader.shader" t="Include" />
+              </e>
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="PureCode" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="MeshFilterEditor.cs" t="Include" />
+                  <e p="TransformEditor.cs" t="Include" />
+                  <e p="UModelerEditorInitializer.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="TutorialInfo" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ReadmeEditor.cs" t="Include" />
+            </e>
+            <e p="Readme.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Boxophobic.SkyboxCubemapExtended.Editor.csproj" t="IncludeRecursive" />
+      <e p="Boxophobic.Utils.Editor.csproj" t="IncludeRecursive" />
+      <e p="Boxophobic.Utils.Scripts.csproj" t="IncludeRecursive" />
+      <e p="CV.sln" t="IncludeFlat" />
+      <e p="HBAO.Demo.Runtime.csproj" t="IncludeRecursive" />
+      <e p="HBAO.Demo.Universal.Runtime.csproj" t="IncludeRecursive" />
+      <e p="HBAO.Editor.csproj" t="IncludeRecursive" />
+      <e p="HBAO.Runtime.csproj" t="IncludeRecursive" />
+      <e p="HBAO.Universal.Editor.csproj" t="IncludeRecursive" />
+      <e p="HBAO.Universal.Runtime.csproj" t="IncludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

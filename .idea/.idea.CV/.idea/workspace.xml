@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4552399a-5e53-437d-8130-f88a0bc776d7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Locations/CountryLocation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/AnimStatesControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Interactions/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/UI/DynamicUIBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Interactions/PlayerInteraction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/Interactions/Location.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/EventManager.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/AnimStatesControl.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/TopDownPlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/LocationInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interactions/CameraTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interactions/Interactable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/TestGizmo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interactions/PlayerInteraction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Locations/LocationInfo.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interactions/LocationTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interactions/Location_Interaction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/EventManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Interactions/Location.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/CameraManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Locations/CountryLocation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/UI/DynamicUIBehaviour.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qUkia3FaCNPgTzpc8Lhl7vOPLL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4552399a-5e53-437d-8130-f88a0bc776d7" name="Default Changelist" comment="" />
+      <created>1617141687172</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617141687172</updated>
+      <workItem from="1617141691714" duration="2849000" />
+      <workItem from="1617219410327" duration="1220000" />
+      <workItem from="1617297993257" duration="1680000" />
+      <workItem from="1617638117554" duration="914000" />
+      <workItem from="1617824031508" duration="1858000" />
+      <workItem from="1617837176885" duration="4038000" />
+      <workItem from="1617899862294" duration="4968000" />
+      <workItem from="1618177594369" duration="79000" />
+      <workItem from="1618178494059" duration="594000" />
+      <workItem from="1619379897677" duration="6995000" />
+      <workItem from="1629227444163" duration="796000" />
+      <workItem from="1629315768603" duration="1918000" />
+      <workItem from="1629912251097" duration="602000" />
+      <workItem from="1630224869921" duration="1185000" />
+      <workItem from="1630229595345" duration="4553000" />
+      <workItem from="1630258886994" duration="4056000" />
+      <workItem from="1633261919722" duration="106000" />
+      <workItem from="1642535803268" duration="1341000" />
+      <workItem from="1642942404888" duration="5397000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="806" y="214" key="RiderGenerateDialog" timestamp="1642947755973">
+      <screen x="84" y="0" width="1836" height="1080" />
+    </state>
+    <state x="806" y="214" key="RiderGenerateDialog/1987.0.1469.864/84.0.1836.1080/3840.0.1920.1160@84.0.1836.1080" timestamp="1642947755973" />
+  </component>
+</project>
