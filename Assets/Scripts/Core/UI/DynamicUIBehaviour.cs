@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class DynamicUIBehaviour : MonoBehaviour
 {
-    [SerializeField] private Image _zoneEntryPopUpImage;
+    [SerializeField] private Image _zoneEntryPopUpImageLeft;
+    [SerializeField] private Image _zoneEntryPopUpImageRight;
     [SerializeField] private TextMeshProUGUI _zoneNamefield;
     
     public void ShowNewZonePopUp(string nameOfZone)
@@ -26,19 +27,24 @@ public class DynamicUIBehaviour : MonoBehaviour
     void CountryPopUpSequnce()
     {
         Sequence countryPopUp = DOTween.Sequence();
-        countryPopUp.Append(_zoneEntryPopUpImage.DOFillAmount(1f, 1f).OnComplete(delegate
+
+        _zoneEntryPopUpImageRight.DOFillAmount(1f, 1f);
+        countryPopUp.Append(_zoneEntryPopUpImageLeft.DOFillAmount(1f, 1f).OnComplete(delegate
         {
             countryPopUp.Append(_zoneNamefield.DOFade(1f, 1f)); 
         }));
+        
         countryPopUp.AppendInterval(5f);
         countryPopUp.Append(_zoneNamefield.DOFade(0f, 0.5f));
-        countryPopUp.Append(_zoneEntryPopUpImage.DOFillAmount(0, 0));
+        countryPopUp.Append(_zoneEntryPopUpImageRight.DOFillAmount(0, 0));
+        countryPopUp.Append(_zoneEntryPopUpImageLeft.DOFillAmount(0, 0));
     }
     
     public void HideZoneEntryPanel()
     {
         _zoneNamefield.DOFade(0f, 0f);
-        _zoneEntryPopUpImage.DOFillAmount(0, 0);
+        _zoneEntryPopUpImageLeft.DOFillAmount(0, 0);
+        _zoneEntryPopUpImageRight.DOFillAmount(0, 0);
     }
     
     public void EnableInfoPanel()
