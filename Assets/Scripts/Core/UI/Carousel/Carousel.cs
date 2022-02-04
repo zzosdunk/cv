@@ -28,6 +28,7 @@ public class Carousel : MonoBehaviour
     
     public void CarouselInit(List<Sprite> sprites)
     {
+        _currentCarouselCollection.Clear();
         _currentCarouselCollection = sprites;
     }
 

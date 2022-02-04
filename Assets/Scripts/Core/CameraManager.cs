@@ -57,7 +57,7 @@ namespace Core
 
         #endregion
 
-        void OnLocationEnter(CameraConfig locationCameraCfg)
+        void OnLocationEnter(CameraConfig locationCameraCfg, UIDataConfig _infoData)
         {
             _cameraSettings = locationCameraCfg;
         }

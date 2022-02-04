@@ -23,6 +23,9 @@ public class PanelTab : MonoBehaviour
     [SerializeField] private Image _highlightSymbol;
     [SerializeField] private Button _tabButton;
 
+    [SerializeField] private float _cooldown;
+    [SerializeField] private bool _canChangeTab;
+
     private void Awake()
     {
         _tabButton.onClick.AddListener(OnTabClicked);
@@ -30,13 +33,31 @@ public class PanelTab : MonoBehaviour
 
     void OnTabClicked()
     {
-        GameManager.Instance.UIManager.DynamicUiBehaviour.ChangeTab(this);
+        if (_canChangeTab)
+        {
+            GameManager.Instance.UIManager.DynamicUiBehaviour.ChangeTab(this);
+            StartCoroutine(TabChangeCooldown());
+        }
     }
 
     public void SetTabState(bool isActive)
     {
         _buttonImage.sprite = isActive ? _activeSprite : _disableSprite;
         _highlightSymbol.gameObject.SetActive(isActive);
+    }
+    
+    private IEnumerator TabChangeCooldown()
+    {
+        _canChangeTab = false;
+        float timeProg = 0;
+
+        while (timeProg < _cooldown)
+        {
+            timeProg += Time.deltaTime;
+            yield return null;
+        }
+
+        _canChangeTab = true;
     }
     
 }

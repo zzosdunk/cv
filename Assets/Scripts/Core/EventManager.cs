@@ -14,10 +14,10 @@ namespace Core
             OnItemsPick?.Invoke();
         }
 
-        public event Action<CameraConfig> OnLocationEnter;
-        public void LocationEnter(CameraConfig locationData)
+        public event Action<CameraConfig, UIDataConfig> OnLocationEnter;
+        public void LocationEnter(CameraConfig locationData, UIDataConfig infoData)
         {
-            OnLocationEnter?.Invoke(locationData);
+            OnLocationEnter?.Invoke(locationData, infoData);
         }
 
         public event Action OnLocationExit;
@@ -25,6 +25,13 @@ namespace Core
         {
             OnLocationExit?.Invoke();
         }
+
+        public event Action<UIDataConfig> OnLocationEnterUI;
+        public void LocationEnterUI(UIDataConfig infoData)
+        {
+            OnLocationEnterUI?.Invoke(infoData);
+        }
+        
     }
 }
 

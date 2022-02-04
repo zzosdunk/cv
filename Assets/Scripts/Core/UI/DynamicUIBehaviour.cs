@@ -1,10 +1,24 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core;
+using Core.Interactions;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+[Serializable]
+public class UIDataConfig
+{
+    [SerializeField] private string _locationName;
+    [SerializeField, TextArea] private string _description;
+    [SerializeField] private List<Sprite> _gallerySprites;
+
+    public string locationName => _locationName;
+    public string description => _description;
+    public List<Sprite> gallerySprites => _gallerySprites;
+}
 
 public class DynamicUIBehaviour : MonoBehaviour
 {
@@ -14,40 +28,76 @@ public class DynamicUIBehaviour : MonoBehaviour
 
     [SerializeField] private CanvasGroup _infoPanel;
     [SerializeField] private TextMeshProUGUI _panelTitleField;
+    [SerializeField] private TextMeshProUGUI _descriptionTextField;
     
     [SerializeField] private List<PanelTab> _tabs = new List<PanelTab>();
+    [SerializeField] private PanelTab _defaultTab;
     [SerializeField] private CanvasGroup _descriptionField;
     [SerializeField] private CanvasGroup _galleryField;
-    
-    public void ShowNewZonePopUp(string nameOfZone)
-    {
-        _zoneNamefield.text = nameOfZone;
 
-        CountryPopUpSequnce();
+    [SerializeField] private Carousel _carouselController;
+    
+    private UIDataConfig _uiData;
+
+    private void Awake()
+    {
+        GameManager.Instance.EventManager.OnLocationEnter += UIDataInit;
     }
 
-    void CountryPopUpSequnce()
-    {
-        Sequence countryPopUp = DOTween.Sequence();
+    #region Inits
 
-        _zoneEntryPopUpImageRight.DOFillAmount(1f, 1f);
-        countryPopUp.Append(_zoneEntryPopUpImageLeft.DOFillAmount(1f, 1f).OnComplete(delegate
-        {
-            countryPopUp.Append(_zoneNamefield.DOFade(1f, 1f)); 
-        }));
+    void UIDataInit(CameraConfig _cameraConfig, UIDataConfig _uiDataConfig)
+    {
+        _uiData = _uiDataConfig;
         
-        countryPopUp.AppendInterval(5f);
-        countryPopUp.Append(_zoneNamefield.DOFade(0f, 0.5f));
-        countryPopUp.Append(_zoneEntryPopUpImageRight.DOFillAmount(0, 0));
-        countryPopUp.Append(_zoneEntryPopUpImageLeft.DOFillAmount(0, 0));
+        InfoPanelInit();
     }
-    
-    public void HideZoneEntryPanel()
+
+    void InfoPanelInit()
     {
-        _zoneNamefield.DOFade(0f, 0f);
-        _zoneEntryPopUpImageLeft.DOFillAmount(0, 0);
-        _zoneEntryPopUpImageRight.DOFillAmount(0, 0);
+        _panelTitleField.text = _uiData.locationName;
+        _descriptionTextField.text = _uiData.description;
+        
+        _carouselController.CarouselInit(_uiData.gallerySprites);
     }
+
+    #endregion
+    
+
+    #region LocationEnterNotification
+
+     public void ShowNewZonePopUp(string nameOfZone)
+        {
+            _zoneNamefield.text = nameOfZone;
+    
+            CountryPopUpSequnce();
+        }
+    
+        void CountryPopUpSequnce()
+        {
+            Sequence countryPopUp = DOTween.Sequence();
+    
+            _zoneEntryPopUpImageRight.DOFillAmount(1f, 1f);
+            countryPopUp.Append(_zoneEntryPopUpImageLeft.DOFillAmount(1f, 1f).OnComplete(delegate
+            {
+                countryPopUp.Append(_zoneNamefield.DOFade(1f, 1f)); 
+            }));
+            
+            countryPopUp.AppendInterval(5f);
+            countryPopUp.Append(_zoneNamefield.DOFade(0f, 0.5f));
+            countryPopUp.Append(_zoneEntryPopUpImageRight.DOFillAmount(0, 0));
+            countryPopUp.Append(_zoneEntryPopUpImageLeft.DOFillAmount(0, 0));
+        }
+        
+        public void HideZoneEntryPanel()
+        {
+            _zoneNamefield.DOFade(0f, 0f);
+            _zoneEntryPopUpImageLeft.DOFillAmount(0, 0);
+            _zoneEntryPopUpImageRight.DOFillAmount(0, 0);
+        }
+
+    #endregion
+   
     
     public void ShowInfoPanel()
     {
@@ -58,6 +108,8 @@ public class DynamicUIBehaviour : MonoBehaviour
         {
             _descriptionField.DOFade(1f, 1f);
         });
+        
+        ChangeTab(_defaultTab);
     }
 
     public void HideInfoPanel()
@@ -73,23 +125,25 @@ public class DynamicUIBehaviour : MonoBehaviour
         switch (clickedTab.PanelTabType)
         {
             case PanelTabType.Info:
-                _galleryField.DOFade(0f, 0.5f).OnComplete(delegate
-                {
-                    _galleryField.blocksRaycasts = false;
-                    _descriptionField.blocksRaycasts = true;
-                    _descriptionField.DOFade(1f, 0.5f);
-                });
+                _galleryField.alpha = 0f;
+                _galleryField.blocksRaycasts = false;
+                _descriptionField.blocksRaycasts = true;
+                _descriptionField.DOFade(1f, 0.5f);
                 break;
             case PanelTabType.Gallery:
-                _descriptionField.DOFade(0f, 0.5f).OnComplete(delegate
-                {
-                    _galleryField.blocksRaycasts = true;
-                    _descriptionField.blocksRaycasts = false;
-                    _galleryField.DOFade(1f, 0.5f);
-                });
+                _carouselController.LoadCarousel();
+                _descriptionField.alpha = 0f;
+                _galleryField.blocksRaycasts = true;
+                _descriptionField.blocksRaycasts = false;
+                _galleryField.DOFade(1f, 0.5f);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.EventManager.OnLocationEnter -= UIDataInit;
     }
 }

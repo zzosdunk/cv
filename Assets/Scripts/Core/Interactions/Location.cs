@@ -6,16 +6,6 @@ using UnityEngine;
 namespace Core.Interactions
 {
     [System.Serializable]
-    public class LocationData
-    {
-        [SerializeField] private int _id;
-        [SerializeField] private string _name;
-
-        public int Id => _id;
-        public string Name => _name;
-    }
-
-    [System.Serializable]
     public class CameraConfig
     {
         [SerializeField] private Transform _lookAtObject;
@@ -26,20 +16,11 @@ namespace Core.Interactions
         public Transform FocusPosition => _focusPosition;
         public Transform CameraParent => _cameraParent;
     }
-
-    [System.Serializable]
-    public class LocationUIInfo
-    {
-        [SerializeField , TextArea] private List<string> _slidesContent;
-        public List<string> SlidesContent => _slidesContent;
-    }
+    
     public class Location : Interactable
     {
-        [SerializeField] private LocationData _locationData;
-        public LocationData LocationData => _locationData;
-
         [SerializeField] private CameraConfig _cameraConfig;
-        [SerializeField] private LocationUIInfo _uiInfo;
+        [SerializeField] private UIDataConfig _uiInfo;
         
         public override string InteractionMessage { 
             get
@@ -69,8 +50,7 @@ namespace Core.Interactions
             if (collision.GetComponentInParent<PlayerInteraction>())
             {
                 collision.GetComponentInParent<PlayerInteraction>().SetInteractMode(true);
-                GameManager.Instance.EventManager.LocationEnter(_cameraConfig);
-                //show UI
+                GameManager.Instance.EventManager.LocationEnter(_cameraConfig, _uiInfo);
             }
         }
         
@@ -80,7 +60,6 @@ namespace Core.Interactions
             {
                 collision.GetComponentInParent<PlayerInteraction>().SetInteractMode(false);
                 GameManager.Instance.EventManager.LocationExit();
-                //hide UI
             }
         }
     }

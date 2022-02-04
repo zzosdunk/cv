@@ -266,6 +266,8 @@ MonoBehaviour:
   _buttonImage: {fileID: 4367935478256188958}
   _highlightSymbol: {fileID: 4824434578498090759}
   _tabButton: {fileID: 1942416668401141479}
+  _cooldown: 2
+  _canChangeTab: 1
 --- !u!1 &7094007151792432736
 GameObject:
   m_ObjectHideFlags: 0
