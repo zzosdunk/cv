@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
@@ -10,17 +11,18 @@ public class DynamicUIBehaviour : MonoBehaviour
     [SerializeField] private Image _zoneEntryPopUpImageLeft;
     [SerializeField] private Image _zoneEntryPopUpImageRight;
     [SerializeField] private TextMeshProUGUI _zoneNamefield;
+
+    [SerializeField] private CanvasGroup _infoPanel;
+    [SerializeField] private TextMeshProUGUI _panelTitleField;
+    
+    [SerializeField] private List<PanelTab> _tabs = new List<PanelTab>();
+    [SerializeField] private CanvasGroup _descriptionField;
+    [SerializeField] private CanvasGroup _galleryField;
     
     public void ShowNewZonePopUp(string nameOfZone)
     {
         _zoneNamefield.text = nameOfZone;
-        // _zoneNamefield.gameObject.SetActive(true);
-        //
-        // _zoneEntryPopUpImage.DOFillAmount(1f, 1f).OnComplete(delegate
-        // {
-        //     Debug.Log("hide after 3 seconds");
-        // });
-        
+
         CountryPopUpSequnce();
     }
 
@@ -47,18 +49,47 @@ public class DynamicUIBehaviour : MonoBehaviour
         _zoneEntryPopUpImageRight.DOFillAmount(0, 0);
     }
     
-    public void EnableInfoPanel()
+    public void ShowInfoPanel()
     {
-            
+        _galleryField.alpha = 0f;
+        _galleryField.blocksRaycasts = false;
+        _descriptionField.blocksRaycasts = true;
+        _infoPanel.DOFade(1f, 1f).OnComplete(delegate
+        {
+            _descriptionField.DOFade(1f, 1f);
+        });
     }
 
-    public void DisableInfoPanel()
+    public void HideInfoPanel()
     {
-            
+        _infoPanel.DOFade(0f, 1f);
     }
 
-    public void ShowDataInfoPanel()
+    public void ChangeTab(PanelTab clickedTab)
     {
-            
+        _tabs.ForEach(t => t.SetTabState(false));
+        clickedTab.SetTabState(true);
+
+        switch (clickedTab.PanelTabType)
+        {
+            case PanelTabType.Info:
+                _galleryField.DOFade(0f, 0.5f).OnComplete(delegate
+                {
+                    _galleryField.blocksRaycasts = false;
+                    _descriptionField.blocksRaycasts = true;
+                    _descriptionField.DOFade(1f, 0.5f);
+                });
+                break;
+            case PanelTabType.Gallery:
+                _descriptionField.DOFade(0f, 0.5f).OnComplete(delegate
+                {
+                    _galleryField.blocksRaycasts = true;
+                    _descriptionField.blocksRaycasts = false;
+                    _galleryField.DOFade(1f, 0.5f);
+                });
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 }

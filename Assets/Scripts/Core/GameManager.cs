@@ -23,14 +23,6 @@ namespace Core
         {
             _instance = this;
         }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                _cameraManager.FocusCameraOnLocation();
-            }
-        }
     }
 }
 

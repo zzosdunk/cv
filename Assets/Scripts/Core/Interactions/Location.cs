@@ -68,6 +68,7 @@ namespace Core.Interactions
         {
             if (collision.GetComponentInParent<PlayerInteraction>())
             {
+                collision.GetComponentInParent<PlayerInteraction>().SetInteractMode(true);
                 GameManager.Instance.EventManager.LocationEnter(_cameraConfig);
                 //show UI
             }
@@ -77,6 +78,7 @@ namespace Core.Interactions
         {
             if (collision.GetComponentInParent<PlayerInteraction>())
             {
+                collision.GetComponentInParent<PlayerInteraction>().SetInteractMode(false);
                 GameManager.Instance.EventManager.LocationExit();
                 //hide UI
             }
