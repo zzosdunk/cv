@@ -8,7 +8,10 @@ namespace Core.Interactions
     {
         public virtual string InteractionMessage { get; }
 
-        public virtual void Show() { }
+        public virtual void Show()
+        {
+            Debug.Log("test");
+        }
 
         public virtual void Hide() { }
 

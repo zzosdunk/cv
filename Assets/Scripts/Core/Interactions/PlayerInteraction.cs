@@ -41,7 +41,7 @@ namespace Core.Interactions
                 GameManager.Instance.UIManager.DynamicUiBehaviour.HideInfoPanel();
             }
             
-            if (Physics.SphereCast(transform.position, InteractionRadius, transform.forward, out Hit, InteractionRadius))
+            if (Physics.SphereCast(transform.position, InteractionRadius, -transform.up, out Hit, InteractionRadius))
             {
                 if (Hit.collider.GetComponent<Interactable>() && Hit.collider.GetComponent<Interactable>().enabled)
                 {
@@ -49,16 +49,16 @@ namespace Core.Interactions
 
                     Hit.collider.GetComponentInParent<Interactable>().Show();
 
-                    if (Input.GetKeyUp(InteractionKey))
-                    {
+                    // if (Input.GetKeyUp(InteractionKey))
+                    // {
                         Interacted(Hit.collider.gameObject);
                         
-                        Debug.Log("interaction is working");
+                        Debug.Log("interaction is working" + Hit.collider.gameObject.name);
 
                         // Hit.collider.GetComponentInParent<Interactable>().Interaction();
                         //
                         // LastInteractable.Hide();
-                    }
+                    // }
                 }
                 else
                 if (LastInteractable != null)
