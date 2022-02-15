@@ -49,16 +49,16 @@ namespace Core.Interactions
 
                     Hit.collider.GetComponentInParent<Interactable>().Show();
 
-                    // if (Input.GetKeyUp(InteractionKey))
-                    // {
+                    if (Input.GetKeyUp(InteractionKey))
+                    {
                         Interacted(Hit.collider.gameObject);
                         
-                        Debug.Log("interaction is working" + Hit.collider.gameObject.name);
+                        Debug.Log("interaction is working " + Hit.collider.gameObject.name);
 
-                        // Hit.collider.GetComponentInParent<Interactable>().Interaction();
-                        //
-                        // LastInteractable.Hide();
-                    // }
+                        Hit.collider.GetComponentInParent<Interactable>().Interaction();
+                        
+                        LastInteractable.Hide();
+                    }
                 }
                 else
                 if (LastInteractable != null)

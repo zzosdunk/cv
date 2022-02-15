@@ -17,34 +17,11 @@ namespace Core.Interactions
         public Transform CameraParent => _cameraParent;
     }
     
-    public class Location : Interactable
+    public class Location : MonoBehaviour
     {
         [SerializeField] private CameraConfig _cameraConfig;
         [SerializeField] private UIDataConfig _uiInfo;
-        
-        public override string InteractionMessage { 
-            get
-            {
-                string txt = "Press <b>F</b> to Pick up the key";
-                return txt;
-            } 
-        }
 
-        public override void Show()
-        {
-            base.Show();
-        }
-        
-        public override void Interaction()
-        {
-            base.Interaction();
-        }
-
-        public override void Hide()
-        {
-            base.Hide();
-        }
-        
         private void OnTriggerEnter(Collider collision)
         {
             if (collision.GetComponentInParent<PlayerInteraction>())

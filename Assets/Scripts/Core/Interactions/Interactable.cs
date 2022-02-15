@@ -6,16 +6,25 @@ namespace Core.Interactions
 {
     public class Interactable : MonoBehaviour
     {
+        [SerializeField] private InventoryItem _item;
+        [SerializeField] private List<Outline> _outline;
+        
         public virtual string InteractionMessage { get; }
 
         public virtual void Show()
         {
-            Debug.Log("test");
+            _outline.ForEach(o => o.enabled = true);
         }
 
-        public virtual void Hide() { }
+        public virtual void Hide()
+        {
+            _outline.ForEach(o => o.enabled = false);
+        }
 
-        public virtual void Interaction() { }
+        public virtual void Interaction()
+        {
+            GameManager.Instance.InventoryManager.CollectItem(_item);
+        }
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Core;
 using Core.Interactions;
+using Core.UI;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -14,10 +15,12 @@ public class UIDataConfig
     [SerializeField] private string _locationName;
     [SerializeField, TextArea] private string _description;
     [SerializeField] private List<Sprite> _gallerySprites;
+    [SerializeField] private bool _isUniqueLocation;
 
     public string locationName => _locationName;
     public string description => _description;
     public List<Sprite> gallerySprites => _gallerySprites;
+    public bool IsUniqueLocation => _isUniqueLocation;
 }
 
 public class DynamicUIBehaviour : MonoBehaviour
