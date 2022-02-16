@@ -2,16 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using Core.Interactions;
+using Core.Inventory;
 using UnityEngine;
 
 namespace Core
 {
     public class EventManager : MonoBehaviour
     {
-        public event Action OnItemsPick;
-        public void ItemPick()
+        public event Action<InventoryItemData> OnItemsPick;
+        public void ItemPick(InventoryItemData _inventoryItem)
         {
-            OnItemsPick?.Invoke();
+            OnItemsPick?.Invoke(_inventoryItem);
         }
 
         public event Action<CameraConfig, UIDataConfig> OnLocationEnter;

@@ -23,7 +23,7 @@ namespace Core.Interactions
 
         public virtual void Interaction()
         {
-            GameManager.Instance.InventoryManager.CollectItem(_item);
+            GameManager.Instance.EventManager.ItemPick(_item.HobbyData);
         }
     }
 }

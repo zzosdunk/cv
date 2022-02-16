@@ -277,6 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1036867755554668084}
+  - component: {fileID: 605460843855623981}
   m_Layer: 0
   m_Name: HobbyDataPanel
   m_TagString: Untagged
@@ -305,3 +306,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 680.7584, y: 138.84831}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &605460843855623981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712822968725430030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681fb21a55299bf448127a9c1d77e9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hobbyNameField: {fileID: 2881455092343220682}
+  _hobbyDescriptionField: {fileID: 1114900682994493174}

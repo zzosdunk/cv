@@ -32,13 +32,16 @@ public class DynamicUIBehaviour : MonoBehaviour
     [SerializeField] private CanvasGroup _infoPanel;
     [SerializeField] private TextMeshProUGUI _panelTitleField;
     [SerializeField] private TextMeshProUGUI _descriptionTextField;
-    
+
     [SerializeField] private List<PanelTab> _tabs = new List<PanelTab>();
     [SerializeField] private PanelTab _defaultTab;
     [SerializeField] private CanvasGroup _descriptionField;
     [SerializeField] private CanvasGroup _galleryField;
 
     [SerializeField] private Carousel _carouselController;
+    [SerializeField] private HobbyUIBehaviour _hobbyUI;
+
+    [SerializeField] private RectTransform _layoutToRebuild;
     
     private UIDataConfig _uiData;
 
@@ -58,10 +61,21 @@ public class DynamicUIBehaviour : MonoBehaviour
 
     void InfoPanelInit()
     {
+        if (!_uiData.IsUniqueLocation)
+        {
+            _hobbyUI.HobbiesState(false);
+        }
+        else
+        {
+            _hobbyUI.HobbiesState(true);
+        }
+        
         _panelTitleField.text = _uiData.locationName;
         _descriptionTextField.text = _uiData.description;
         
         _carouselController.CarouselInit(_uiData.gallerySprites);
+        
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_layoutToRebuild);
     }
 
     #endregion
