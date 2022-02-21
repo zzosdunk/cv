@@ -24,6 +24,7 @@ namespace Core.Interactions
         public virtual void Interaction()
         {
             GameManager.Instance.EventManager.ItemPick(_item.HobbyData);
+            _item.HideInteractableItem();
         }
     }
 }
