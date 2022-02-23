@@ -20,7 +20,7 @@ public class TopDownPlayerController : MonoBehaviour
 
     [SerializeField] private CinemachineVirtualCamera _CMCamera;
     [SerializeField] private Camera _camera;
-
+    
     private Vector3 _previousPosition;
     
     private void Awake()

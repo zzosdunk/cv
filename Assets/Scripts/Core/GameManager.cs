@@ -18,6 +18,8 @@ namespace Core
         public CameraManager CameraManager => _cameraManager;
         [SerializeField] private EventManager _eventManager;
         public EventManager EventManager => _eventManager;
+        [SerializeField] private PlayerManager _playerManager;
+        public PlayerManager PlayerManager => _playerManager;
 
         private Transform _player;
         private void Awake()
