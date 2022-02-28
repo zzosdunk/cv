@@ -1,18 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StarBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Image _starImage;
+    [SerializeField] private Sprite _disabledStar;
+    [SerializeField] private Sprite _activeStar;
+
+
+    public void SetStarState(bool starState)
     {
-        
+        _starImage.sprite = starState ? _activeStar : _disabledStar;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StarPartcile()
     {
-        
+        //run this when open for the first time shop after all items colletced
     }
 }
