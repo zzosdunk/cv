@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Core;
 using Core.Inventory;
+using Core.UI.Dynamic;
 using UnityEngine;
 
 public class StarsHolder : MonoBehaviour
@@ -30,7 +31,8 @@ public class StarsHolder : MonoBehaviour
         }
         else
         {
-            _shopController.UnlockShop();
+            if (_shopController != null)
+                _shopController.UnlockShop();
         }
         
     }

@@ -1,42 +1,57 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.UI;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+namespace Core.UI.Dynamic
 {
-    [SerializeField] private GameObject _shopPanel;
-    [SerializeField] private GameObject _progressInfoPanel;
-    [SerializeField] private GameObject _completedStarsPanel;
 
-    [SerializeField] private Animator _starsCompletedAnim;
 
-    private void Awake()
+    public class Shop : MovablePanel
     {
-        
-    }
+        [SerializeField] private GameObject _shopPanel;
+        [SerializeField] private GameObject _progressInfoPanel;
+        [SerializeField] private GameObject _completedStarsPanel;
 
-    private void Start()
-    {
-        // _shopPanel.SetActive(false);
-    }
+        [SerializeField] private Animator _starsCompletedAnim;
 
-    public void UnlockShop()
-    {
-        EnableCompletedPanel();
-        EnableShop();
-    }
+        private bool _isUnlocked;
+        public bool IsUnlocked => _isUnlocked;
 
-    public void EnableCompletedPanel()
-    {
-        _progressInfoPanel.SetActive(false);
-        _completedStarsPanel.SetActive(true);
-        
-        _starsCompletedAnim.Play("stars_completed");
-    }
+        private void Awake()
+        {
 
-    public void EnableShop()
-    {
-        
+        }
+
+        private void Start()
+        {
+            // _shopPanel.SetActive(false);
+        }
+
+        public void UnlockShop()
+        {
+            EnableCompletedPanel();
+            EnableShop();
+        }
+
+        public void EnableCompletedPanel()
+        {
+            _progressInfoPanel.SetActive(false);
+            _completedStarsPanel.SetActive(true);
+
+            _isUnlocked = true;
+
+        }
+
+        public void EnableShop()
+        {
+
+        }
+
+        public void ShowCompletedEffect()
+        {
+            _starsCompletedAnim.Play("stars_completed");
+        }
     }
 }

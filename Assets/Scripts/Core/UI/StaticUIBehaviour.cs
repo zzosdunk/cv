@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class StaticUIBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private List<HeaderButton> _headerButtons = new List<HeaderButton>();
 
-    // Update is called once per frame
-    void Update()
+    public void HideAllPanels()
     {
-        
+        _headerButtons.ForEach(p => p.HidePanel());
     }
 }

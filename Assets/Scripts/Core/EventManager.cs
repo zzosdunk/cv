@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Core.Interactions;
 using Core.Inventory;
+using Core.UI;
 using UnityEngine;
 
 namespace Core
@@ -32,7 +33,13 @@ namespace Core
         {
             OnLocationEnterUI?.Invoke(infoData);
         }
-        
+
+        public event Action<PanelType> OnPanelOpen;
+        public void PanelOpen(PanelType panelTabType)
+        {
+            OnPanelOpen?.Invoke(panelTabType);
+        }
+
     }
 }
 
