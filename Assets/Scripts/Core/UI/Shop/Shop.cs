@@ -6,8 +6,6 @@ using UnityEngine;
 
 namespace Core.UI.Dynamic
 {
-
-
     public class Shop : MovablePanel
     {
         [SerializeField] private GameObject _shopPanel;
@@ -21,12 +19,24 @@ namespace Core.UI.Dynamic
 
         private void Awake()
         {
-
+            GameManager.Instance.EventManager.OnPanelOpen += ShowPanel;
         }
 
         private void Start()
         {
             // _shopPanel.SetActive(false);
+        }
+
+        protected override void ShowPanel(PanelType panelType)
+        {
+            base.ShowPanel(panelType);
+
+            if (_isUnlocked)
+            {
+                ShowCompletedEffect();
+            }
+            
+            Debug.Log("test");
         }
 
         public void UnlockShop()
@@ -52,6 +62,11 @@ namespace Core.UI.Dynamic
         public void ShowCompletedEffect()
         {
             _starsCompletedAnim.Play("stars_completed");
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.EventManager.OnPanelOpen -= ShowPanel;
         }
     }
 }

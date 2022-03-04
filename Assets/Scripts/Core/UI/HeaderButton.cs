@@ -32,7 +32,7 @@ public class HeaderButton : MonoBehaviour
             _staticUI.HideAllPanels();
             
             GameManager.Instance.EventManager.PanelOpen(_panelType);
-            Debug.Log(_panelType + " clicked");
+
             // _panel.DOKill();
             // _panel.DOFade(1f, 2f).OnComplete(delegate
             // {
