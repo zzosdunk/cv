@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Core.UI;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,10 +27,20 @@ namespace Core.UI.Dynamic
 
         [SerializeField] private Button _applyCustomizationChangesButton;
         
+        [SerializeField] private Color _lockedColor;
+        [SerializeField] private Color _unlockedColor;
+        [SerializeField] private Image _previewImage;
+        [SerializeField] private Image _previewImageLock;
+
+        public Color LockedColor => _lockedColor;
+        public Color UnlockedColor => _unlockedColor;
+        public Image PreviewImage => _previewImage;
+
         private bool _isUnlocked;
         public bool IsUnlocked => _isUnlocked;
 
         private Material _currentTrousersMaterial;
+        
         
         private void Awake()
         {
@@ -67,7 +78,8 @@ namespace Core.UI.Dynamic
             _completedStarsPanel.SetActive(true);
 
             _isUnlocked = true;
-
+            
+            
         }
 
         public void EnableShop()
@@ -80,6 +92,10 @@ namespace Core.UI.Dynamic
             _starsCompletedAnim.Play("stars_completed");
             
             _customizeButtons.ForEach(cb => cb.ChangeButtonIcon(true));
+
+            _previewImage.DOColor(_unlockedColor, 1f);
+            _previewImageLock.gameObject.SetActive(false);
+            _applyCustomizationChangesButton.enabled = true;
         }
 
         public void CustomizationPreview(Material customizationMaterial, CustomizationPart part)
@@ -99,6 +115,8 @@ namespace Core.UI.Dynamic
             if (_currentTrousersMaterial != null)
             {
                 GameManager.Instance.PlayerManager.SetNewMaterial(_currentTrousersMaterial);
+                
+                GameManager.Instance.UIManager.StaticUiBehaviour.HideAllPanels();
             }
         }
         

@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 058a21a51902a4b20a29ae176fcba0a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b01240610c3ae48eabbf419977065f1d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -132,13 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e65a031d3c4b04b82972406dd12e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shopController: {fileID: 0}
   _buttonImage: {fileID: 3904560223761093431}
   _iconImage: {fileID: 6961077560326594141}
   _lockedButton: {fileID: 21300000, guid: 4d994859ab9984da1bf99b0192dd6132, type: 3}
   _unlockedButton: {fileID: 21300000, guid: 6fd0c242a45d6472cb3533e9f7dbf179, type: 3}
-  _lockedButtonColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
-  _unlockedButtonColor: {r: 1, g: 1, b: 1, a: 1}
-  _previewImage: {fileID: 0}
   _previewPlayerCustomization: {fileID: 0}
   _customMaterial: {fileID: 0}
 --- !u!1 &5204283003559899175

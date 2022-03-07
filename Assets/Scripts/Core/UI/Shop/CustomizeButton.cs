@@ -15,10 +15,7 @@ public class CustomizeButton : MonoBehaviour
     [SerializeField] private Image _iconImage;
     [SerializeField] private Sprite _lockedButton;
     [SerializeField] private Sprite _unlockedButton;
-    [SerializeField] private Color _lockedButtonColor;
-    [SerializeField] private Color _unlockedButtonColor;
 
-    [SerializeField] private Image _previewImage;
     [SerializeField] private Sprite _previewPlayerCustomization;
 
     [SerializeField] private Material _customMaterial;
@@ -43,12 +40,12 @@ public class CustomizeButton : MonoBehaviour
         
         if (state)
         {
-            _buttonImage.DOColor(_unlockedButtonColor, 1f);
+            _buttonImage.DOColor(_shopController.UnlockedColor, 1f);
             _iconImage.sprite = _unlockedButton;
         }
         else
         {
-            _buttonImage.color = _lockedButtonColor;
+            _buttonImage.color = _shopController.LockedColor;
             _iconImage.sprite = _lockedButton;
         }
     }
@@ -57,7 +54,7 @@ public class CustomizeButton : MonoBehaviour
     {
         if (_shopController.IsUnlocked)
         {
-            _previewImage.sprite = _previewPlayerCustomization;
+            _shopController.PreviewImage.sprite = _previewPlayerCustomization;
             
             _shopController.CustomizationPreview(_customMaterial, CustomizationPart.Trousers);
         }
