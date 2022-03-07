@@ -3,9 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Core.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Core.UI.Dynamic
 {
+    [System.Serializable]
+    public enum CustomizationPart
+    {
+        Trousers = 1,
+        
+    }
+    
     public class Shop : MovablePanel
     {
         [SerializeField] private GameObject _shopPanel;
@@ -14,12 +22,20 @@ namespace Core.UI.Dynamic
 
         [SerializeField] private Animator _starsCompletedAnim;
 
+        [SerializeField] private List<CustomizeButton> _customizeButtons = new List<CustomizeButton>();
+
+        [SerializeField] private Button _applyCustomizationChangesButton;
+        
         private bool _isUnlocked;
         public bool IsUnlocked => _isUnlocked;
 
+        private Material _currentTrousersMaterial;
+        
         private void Awake()
         {
             GameManager.Instance.EventManager.OnPanelOpen += ShowPanel;
+            
+            _applyCustomizationChangesButton.onClick.AddListener(ApplyCustomization);
         }
 
         private void Start()
@@ -62,8 +78,30 @@ namespace Core.UI.Dynamic
         public void ShowCompletedEffect()
         {
             _starsCompletedAnim.Play("stars_completed");
+            
+            _customizeButtons.ForEach(cb => cb.ChangeButtonIcon(true));
         }
 
+        public void CustomizationPreview(Material customizationMaterial, CustomizationPart part)
+        {
+            switch (part)
+            {
+                case CustomizationPart.Trousers:
+                    _currentTrousersMaterial = customizationMaterial;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(part), part, null);
+            }
+        }
+
+        void ApplyCustomization()
+        {
+            if (_currentTrousersMaterial != null)
+            {
+                GameManager.Instance.PlayerManager.SetNewMaterial(_currentTrousersMaterial);
+            }
+        }
+        
         private void OnDisable()
         {
             GameManager.Instance.EventManager.OnPanelOpen -= ShowPanel;
