@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Core;
 using Core.Inventory;
-using Core.UI.Dynamic;
+using Core.UI.Shop;
 using UnityEngine;
 
 public class StarsHolder : MonoBehaviour

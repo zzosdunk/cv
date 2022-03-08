@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using Core.UI;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Core.UI.Dynamic
+namespace Core.UI.Shop
 {
     [System.Serializable]
     public enum CustomizationPart
