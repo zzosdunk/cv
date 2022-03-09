@@ -28,6 +28,8 @@ namespace Core.Interactions
             {
                 collision.GetComponentInParent<PlayerInteraction>().SetInteractMode(true);
                 GameManager.Instance.EventManager.LocationEnter(_cameraConfig, _uiInfo);
+                
+                GameManager.Instance.UIManager.DynamicUiBehaviour.SetInteractionMessage(_uiInfo.locationName);
             }
         }
         
@@ -37,6 +39,8 @@ namespace Core.Interactions
             {
                 collision.GetComponentInParent<PlayerInteraction>().SetInteractMode(false);
                 GameManager.Instance.EventManager.LocationExit();
+                
+                GameManager.Instance.UIManager.DynamicUiBehaviour.InteractionState(false);
             }
         }
     }

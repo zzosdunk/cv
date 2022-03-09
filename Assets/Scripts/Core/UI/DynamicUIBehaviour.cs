@@ -25,23 +25,33 @@ public class UIDataConfig
 
 public class DynamicUIBehaviour : MonoBehaviour
 {
+    [Header("Zone Pop-Up")]
     [SerializeField] private Image _zoneEntryPopUpImageLeft;
     [SerializeField] private Image _zoneEntryPopUpImageRight;
     [SerializeField] private TextMeshProUGUI _zoneNamefield;
 
+    [Header("Location Info")]
     [SerializeField] private CanvasGroup _infoPanel;
     [SerializeField] private TextMeshProUGUI _panelTitleField;
     [SerializeField] private TextMeshProUGUI _descriptionTextField;
-
     [SerializeField] private List<PanelTab> _tabs = new List<PanelTab>();
     [SerializeField] private PanelTab _defaultTab;
     [SerializeField] private CanvasGroup _descriptionField;
     [SerializeField] private CanvasGroup _galleryField;
-
     [SerializeField] private Carousel _carouselController;
     [SerializeField] private HobbyUIBehaviour _hobbyUI;
 
+    [Header("Interaction")] 
+    [SerializeField] private CanvasGroup _interactionPanel;
+    [SerializeField] private TextMeshProUGUI _interactionMessage;
+    [SerializeField] private RectTransform _interactionPanelRect;
+    [SerializeField] private RectTransform _activeRectPos;
+    [SerializeField] private RectTransform _disabledRectPos;
+    
+    
     [SerializeField] private RectTransform _layoutToRebuild;
+    
+    
     
     private UIDataConfig _uiData;
 
@@ -159,6 +169,32 @@ public class DynamicUIBehaviour : MonoBehaviour
         }
     }
 
+    #region Interaction
+
+    public void InteractionState(bool state)
+    {
+        if (state)
+        {
+            _interactionPanelRect.DOKill();
+            _interactionPanelRect.DOMove(_activeRectPos.position, 1f);
+            _interactionPanel.DOFade(1f, 0.75f);
+        }
+        else
+        {
+            _interactionPanelRect.DOKill();
+            _interactionPanelRect.DOMove(_disabledRectPos.position, 1f);
+            _interactionPanel.DOFade(0f, 0.25f);
+        }
+    }
+
+    public void SetInteractionMessage(string locationName)
+    {
+        _interactionMessage.text = "Press E to see info about " + locationName;
+        
+        InteractionState(true);
+    }
+    #endregion
+    
     private void OnDestroy()
     {
         GameManager.Instance.EventManager.OnLocationEnter -= UIDataInit;

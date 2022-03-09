@@ -34,6 +34,7 @@ namespace Core.Interactions
                 //set all data in camera manager and UI
                 GameManager.Instance.CameraManager.FocusCameraOnLocation();
                 GameManager.Instance.UIManager.DynamicUiBehaviour.ShowInfoPanel();
+                GameManager.Instance.UIManager.DynamicUiBehaviour.InteractionState(false);
             }
 
             if (Input.GetKeyUp(KeyCode.Escape))
