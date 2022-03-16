@@ -48,6 +48,8 @@ public class DynamicUIBehaviour : MonoBehaviour
     [SerializeField] private RectTransform _activeRectPos;
     [SerializeField] private RectTransform _disabledRectPos;
     
+    [Header("Player Reset")]
+    [SerializeField] private CanvasGroup _resetPlayerScreen;
     
     [SerializeField] private RectTransform _layoutToRebuild;
     
@@ -185,6 +187,15 @@ public class DynamicUIBehaviour : MonoBehaviour
             _interactionPanelRect.DOMove(_disabledRectPos.position, 1f);
             _interactionPanel.DOFade(0f, 0.25f);
         }
+    }
+
+    public void ResetPlayer(SpawnPositionLocation positionToSpawn) {
+        _resetPlayerScreen.DOFade(1f, 2f).OnComplete(delegate
+        {
+            GameManager.Instance.PlayerManager.SetPlayerPosition(positionToSpawn);
+             _resetPlayerScreen.DOFade(0f, 1f);
+        });
+
     }
 
     public void SetInteractionMessage(string locationName)
