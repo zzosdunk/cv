@@ -14,6 +14,9 @@ public class SharkBehaviour : MonoBehaviour
     [SerializeField] private float _movementSpeed;
     
     [SerializeField] private bool _isObjectMoving;
+
+    private Transform _currentLookAt;
+    
     private void Update()
     {
         if (_isObjectMoving)
@@ -40,8 +43,18 @@ public class SharkBehaviour : MonoBehaviour
         //transform.DOMove(position, 10f).SetLoops(-1, LoopType.Yoyo);
 
         transform.position = Vector3.Lerp(_firstIdlePosition.position, _secondIdlePosition.position, Mathf.PingPong(Time.time / (_movementSpeed * 10f), 1));
-        
-        transform.DOLookAt(_secondIdlePosition.position, 1f);
+
+        if ((transform.position - _secondIdlePosition.position).magnitude < 1f)
+        {
+            _currentLookAt = _firstIdlePosition;
+
+        }
+        if ((transform.position - _firstIdlePosition.position).magnitude < 1f)
+        {
+            _currentLookAt = _secondIdlePosition;
+        }
+
+        transform.DOLookAt(_currentLookAt.position, 1f);
     }
 
     public void SharkState(bool isActive)
