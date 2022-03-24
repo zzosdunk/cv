@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using Core.Audio;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -56,6 +57,8 @@ namespace Core.UI.Shop
             
                 _shopController.CustomizationPreview(_customMaterial, CustomizationPart.Trousers);
             }
+            
+            GameManager.Instance.AudioManager.PlaySound(Sound.SuitPreview);
         }
     }
 }

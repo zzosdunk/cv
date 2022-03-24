@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.Audio;
 using Core.Inventory;
 using UnityEngine;
 
@@ -20,7 +21,9 @@ namespace Core
         public EventManager EventManager => _eventManager;
         [SerializeField] private PlayerManager _playerManager;
         public PlayerManager PlayerManager => _playerManager;
-
+        [SerializeField] private AudioManager _audioManager;
+        public AudioManager AudioManager => _audioManager;
+        
         private Transform _player;
         private void Awake()
         {
