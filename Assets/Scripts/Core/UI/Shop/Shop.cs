@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Audio;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +24,7 @@ namespace Core.UI.Shop
 
         [SerializeField] private List<CustomizeButton> _customizeButtons = new List<CustomizeButton>();
 
-        [SerializeField] private Button _applyCustomizationChangesButton;
+        [SerializeField] private AcceptButton _applyCustomizationChangesButton;
         
         [SerializeField] private Color _lockedColor;
         [SerializeField] private Color _unlockedColor;
@@ -44,7 +45,7 @@ namespace Core.UI.Shop
         {
             GameManager.Instance.EventManager.OnPanelOpen += ShowPanel;
             
-            _applyCustomizationChangesButton.onClick.AddListener(ApplyCustomization);
+            _applyCustomizationChangesButton.ButtonAccept.onClick.AddListener(ApplyCustomization);
         }
 
         private void Start()
@@ -60,12 +61,12 @@ namespace Core.UI.Shop
             {
                 ShowCompletedEffect();
             }
-            
-            Debug.Log("test");
         }
 
         public void UnlockShop()
         {
+            _applyCustomizationChangesButton.ButtonState(true);
+            
             EnableCompletedPanel();
             EnableShop();
         }
@@ -93,7 +94,7 @@ namespace Core.UI.Shop
 
             _previewImage.DOColor(_unlockedColor, 1f);
             _previewImageLock.gameObject.SetActive(false);
-            _applyCustomizationChangesButton.enabled = true;
+            
         }
 
         public void CustomizationPreview(Material customizationMaterial, CustomizationPart part)
@@ -110,6 +111,8 @@ namespace Core.UI.Shop
 
         void ApplyCustomization()
         {
+            _applyCustomizationChangesButton.OnButtonClick();
+            
             if (_currentTrousersMaterial != null)
             {
                 GameManager.Instance.PlayerManager.SetNewMaterial(_currentTrousersMaterial);

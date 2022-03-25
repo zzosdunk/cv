@@ -14,6 +14,7 @@ namespace Core.Audio
         SuitPreview = 3,
         KeyboardInteraction = 4,
         PlayerMovement = 5,
+        Error = 6,
         
     }
 

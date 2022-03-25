@@ -7,7 +7,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HeaderButton : MonoBehaviour
+public class HeaderButton : UIButton
 {
     [SerializeField] private StaticUIBehaviour _staticUI;
 
@@ -16,17 +16,21 @@ public class HeaderButton : MonoBehaviour
     [SerializeField] private Button _button;
 
     [SerializeField] private MovablePanel _panel;
-    
+
     private bool _tabState;
     
     private void Awake()
     {
         _tabState = true;
         _button.onClick.AddListener(delegate { TabPanelState(_tabState); });
+        
+        ButtonState(true);
     }
 
     void TabPanelState(bool state)
     {
+        OnButtonClick();
+        
         if (_tabState)
         {
             _staticUI.HideAllPanels();
@@ -55,5 +59,15 @@ public class HeaderButton : MonoBehaviour
         _panel.HidePanel();
 
         _tabState = true;
+    }
+
+    public override void OnButtonClick()
+    {
+        base.OnButtonClick();
+    }
+
+    public override void ButtonState(bool state)
+    {
+        base.ButtonState(state);
     }
 }

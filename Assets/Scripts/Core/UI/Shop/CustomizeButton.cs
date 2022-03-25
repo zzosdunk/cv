@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Core.UI.Shop
 {
-    public class CustomizeButton : MonoBehaviour
+    public class CustomizeButton : UIButton
     {
         [SerializeField] private Shop _shopController;
     
@@ -35,7 +35,7 @@ namespace Core.UI.Shop
 
         public void ChangeButtonIcon(bool state)
         {
-            _button.enabled = state;
+            ButtonState(state);
         
             if (state)
             {
@@ -51,14 +51,24 @@ namespace Core.UI.Shop
 
         void ChooseCustomMaterial()
         {
+            OnButtonClick();
+            
             if (_shopController.IsUnlocked)
             {
                 _shopController.PreviewImage.sprite = _previewPlayerCustomization;
             
                 _shopController.CustomizationPreview(_customMaterial, CustomizationPart.Trousers);
             }
-            
-            GameManager.Instance.AudioManager.PlaySound(Sound.SuitPreview);
+        }
+
+        public override void OnButtonClick()
+        {
+            base.OnButtonClick();
+        }
+
+        public override void ButtonState(bool state)
+        {
+            base.ButtonState(state);
         }
     }
 }
