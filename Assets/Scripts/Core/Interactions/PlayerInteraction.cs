@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.Audio;
 using UnityEngine;
 
 namespace Core.Interactions
@@ -35,6 +36,8 @@ namespace Core.Interactions
                 GameManager.Instance.CameraManager.FocusCameraOnLocation();
                 GameManager.Instance.UIManager.DynamicUiBehaviour.ShowInfoPanel();
                 GameManager.Instance.UIManager.DynamicUiBehaviour.InteractionState(false);
+                
+                GameManager.Instance.AudioManager.PlaySound(Sound.KeyboardInteraction);
             }
 
             if (Input.GetKeyUp(KeyCode.Escape))

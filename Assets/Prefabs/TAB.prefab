@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f01655f17233c49818e334c22fdaa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundType: 2
   _panelTabType: 0
   _activeSprite: {fileID: 21300000, guid: 451cd109040e0426483bf2ea4aa176ee, type: 3}
   _disableSprite: {fileID: 21300000, guid: 356c0b18fbd3e4e94a7e05ae60d72575, type: 3}

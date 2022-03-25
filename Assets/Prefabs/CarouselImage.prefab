@@ -206,5 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 334cc69f73c22d94ba4eeb8936a3562b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundType: 7
   _carouselController: {fileID: 0}
   _gfxRepresentation: {fileID: 0}

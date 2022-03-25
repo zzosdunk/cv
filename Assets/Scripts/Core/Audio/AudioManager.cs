@@ -15,6 +15,7 @@ namespace Core.Audio
         KeyboardInteraction = 4,
         PlayerMovement = 5,
         Error = 6,
+        GalleryShot = 7,
         
     }
 

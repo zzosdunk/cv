@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Core;
+using Core.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public enum PanelTabType
     Gallery
 }
 
-public class PanelTab : MonoBehaviour
+public class PanelTab : UIButton
 {
     [SerializeField] private PanelTabType _panelTabType;
     public PanelTabType PanelTabType => _panelTabType;
@@ -29,10 +30,14 @@ public class PanelTab : MonoBehaviour
     private void Awake()
     {
         _tabButton.onClick.AddListener(OnTabClicked);
+        
+        ButtonState(true);
     }
 
     void OnTabClicked()
     {
+        OnButtonClick();
+        
         if (_canChangeTab)
         {
             GameManager.Instance.UIManager.DynamicUiBehaviour.ChangeTab(this);
@@ -59,5 +64,14 @@ public class PanelTab : MonoBehaviour
 
         _canChangeTab = true;
     }
-    
+
+    public override void OnButtonClick()
+    {
+        base.OnButtonClick();
+    }
+
+    public override void ButtonState(bool state)
+    {
+        base.ButtonState(state);
+    }
 }

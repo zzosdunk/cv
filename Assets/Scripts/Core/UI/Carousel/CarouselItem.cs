@@ -5,7 +5,7 @@ using Core.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CarouselItem : MonoBehaviour
+public class CarouselItem : UIButton
 {
     [SerializeField] private Carousel _carouselController;
     [SerializeField] private Sprite _gfxRepresentation;
@@ -19,7 +19,9 @@ public class CarouselItem : MonoBehaviour
         _button = GetComponent<Button>();
         _imageField = GetComponent<Image>();
         
-        _button.onClick.AddListener(OnClicked);
+        _button.onClick.AddListener(OnButtonClick);
+        
+        ButtonState(true);
     }
 
     public void SetItem(Sprite referenceImage)
@@ -27,9 +29,17 @@ public class CarouselItem : MonoBehaviour
         _gfxRepresentation = referenceImage;
         _imageField.sprite = _gfxRepresentation;
     }
+    
 
-    void OnClicked()
+    public override void OnButtonClick()
     {
+        base.OnButtonClick();
+        
         _carouselController.SetMainImage(_gfxRepresentation);  
+    }
+
+    public override void ButtonState(bool state)
+    {
+        base.ButtonState(state);
     }
 }
